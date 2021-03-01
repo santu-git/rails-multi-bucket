@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>News from <%= @organization.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @news.each do |news| %>
+      <tr>
+        <td><%= image_tag news.featured.variant(resize: '100x100') %></td>
+        <td><%= news.title %></td>
+        <td><%= news.description %></td>
+        <td><%= link_to 'Show', [@organization,news] %></td>
+        <td><%= link_to 'Edit', edit_organization_news_path(@organization,news) %></td>
+        <td><%= link_to 'Destroy', [@organization,news], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New News', new_organization_news_path(@organization) %>
