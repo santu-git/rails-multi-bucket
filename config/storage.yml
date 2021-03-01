@@ -12,7 +12,7 @@ amazon:
   secret_access_key: <%= ENV["secret_access_key"] %>
   endpoint: <%= ENV["endpoint"] %>
   region: <%= ENV["region"] %>
-  bucket: <%= ENV["global_bucket"] %>
+  bucket: <%= ENV["common_bucket"] %>
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS
